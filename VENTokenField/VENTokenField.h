@@ -58,11 +58,14 @@ NS_ASSUME_NONNULL_BEGIN
  * -----------------------------------------------------------------------------
  */
 
+@property (assign, nonatomic) CGFloat lineHeightPadding;
+
 @property (assign, nonatomic) CGFloat maxHeight;
 @property (assign, nonatomic) CGFloat verticalInset;
 @property (assign, nonatomic) CGFloat horizontalInset;
 @property (assign, nonatomic) CGFloat tokenPadding;
 @property (assign, nonatomic) CGFloat minInputWidth;
+@property (assign, nonatomic) CGFloat toLabelPadding;
 
 @property (assign, nonatomic) UIKeyboardType inputTextFieldKeyboardType;
 @property (assign, nonatomic) UIKeyboardAppearance inputTextFieldKeyboardAppearance;
@@ -79,6 +82,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) NSArray *delimiters;
 @property (copy, nonatomic, nullable) NSString *placeholderText;
 @property (copy, nonatomic, nullable) NSString *inputTextFieldAccessibilityLabel;
+
+@property (strong, nonatomic) UIFont *font;
 
 - (void)setColorScheme:(UIColor *)color;
 
