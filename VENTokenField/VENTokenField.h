@@ -58,6 +58,8 @@ NS_ASSUME_NONNULL_BEGIN
  * -----------------------------------------------------------------------------
  */
 
+@property (assign, nonatomic) CGFloat lineHeightPadding;
+
 @property (assign, nonatomic) CGFloat maxHeight;
 @property (assign, nonatomic) CGFloat verticalInset;
 @property (assign, nonatomic) CGFloat horizontalInset;
