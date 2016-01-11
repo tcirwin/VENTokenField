@@ -95,6 +95,7 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
     self.colorScheme = [UIColor blueColor];
     self.toLabelTextColor = [UIColor colorWithRed:112/255.0f green:124/255.0f blue:124/255.0f alpha:1.0f];
     self.inputTextFieldTextColor = [UIColor colorWithRed:38/255.0f green:39/255.0f blue:41/255.0f alpha:1.0f];
+    self.font = [UIFont fontWithName:@"HelveticaNeue" size:15.5];
     
     // Accessing bare value to avoid kicking off a premature layout run.
     _toLabelText = NSLocalizedString(@"To:", nil);
@@ -155,6 +156,14 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
     for (VENToken *token in self.tokens) {
         [token setColorScheme:color];
     }
+}
+
+- (void)setFont:(UIFont *)font
+{
+    _font = font;
+    self.collapsedLabel.font = self.font;
+    self.inputTextField.font = self.font;
+    self.toLabel.font = self.font;
 }
 
 - (void)setInputTextFieldAccessoryView:(UIView *)inputTextFieldAccessoryView
@@ -362,7 +371,7 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
     if (!_toLabel) {
         _toLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _toLabel.textColor = self.toLabelTextColor;
-        _toLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:15.5];
+        _toLabel.font = self.font;
         _toLabel.x = 0;
         [_toLabel sizeToFit];
         [_toLabel setHeight:[self heightForToken]];
@@ -404,7 +413,7 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
         _inputTextField = [[VENBackspaceTextField alloc] init];
         [_inputTextField setKeyboardType:self.inputTextFieldKeyboardType];
         _inputTextField.textColor = self.inputTextFieldTextColor;
-        _inputTextField.font = [UIFont fontWithName:@"HelveticaNeue" size:15.5];
+        _inputTextField.font = self.font;
         _inputTextField.autocorrectionType = self.autocorrectionType;
         _inputTextField.autocapitalizationType = self.autocapitalizationType;
         _inputTextField.tintColor = self.colorScheme;
