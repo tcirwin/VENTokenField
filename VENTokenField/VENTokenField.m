@@ -628,4 +628,9 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
     }
 }
 
+- (void)setInputAccessoryView:(UIView *)view
+{
+    self.inputTextField.inputAccessoryView = view;
+}
+
 @end

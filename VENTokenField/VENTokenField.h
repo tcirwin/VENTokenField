@@ -86,6 +86,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) UIFont *font;
 
 - (void)setColorScheme:(UIColor *)color;
+- (void)setInputAccessoryView:(UIView *)view;
 
 @end
 
