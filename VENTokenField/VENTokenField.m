@@ -574,6 +574,13 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
     }
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (textField == self.inputTextField && [self.delegate respondsToSelector:@selector(tokenFieldDidEndEditing:)]) {
+        [self.delegate tokenFieldDidEndEditing:self];
+    }
+}
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     [self unhighlightAllTokens];
